@@ -10,6 +10,7 @@ public class CampFireLight : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         campfireLight = GetComponent<Light>();
         campfireLight.intensity = baseIntensity;
     }

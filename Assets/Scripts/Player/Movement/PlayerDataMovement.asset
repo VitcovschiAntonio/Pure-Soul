@@ -19,7 +19,7 @@ MonoBehaviour:
   runDeccelAmount: 22.727272
   rotationSpeed: 10
   dashAmount: 1
-  dashSpeed: 0.2
+  dashSpeed: 0.1
   dashCooldown: 0
   dashSleepTime: 0.05
   dashAttackTime: 0.15

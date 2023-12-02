@@ -13,17 +13,15 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private PlayerMovementData _movementData;
-
+    private Vector2 _movementInput;
+    private Rigidbody _rb;
+    private bool _canDash;
+  
     public Action OnPlayerRun;
     public Action OnPlayerStopedMoving;
     public Action<bool> OnPlayerDash;
     //public Action OnPlayerWalk;
-    private Vector2 _movementInput;
     
-    private Rigidbody _rb;
-  
-    private bool _canDash;
-  
     void Start()
     {
        _rb = GetComponent<Rigidbody>();
@@ -72,28 +70,15 @@ public class PlayerMovement : MonoBehaviour
          {
             OnPlayerStopedMoving();
          }
-        
-        
     }
+
     public void Dash()
     {
-       
-        
-            OnPlayerDash(_canDash);
+        OnPlayerDash(_canDash);
          Vector3 dashDirection = _rb.velocity.normalized;
          _rb.AddForce(dashDirection * _movementData.dashSpeed, ForceMode.VelocityChange) ;
-        _canDash = false;
-        
-        
-       
-      
-        
-        
-        }
-        
-      
-        
-       
+        _canDash = false;     
+        } 
     }
 
 
