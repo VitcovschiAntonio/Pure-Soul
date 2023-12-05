@@ -41,6 +41,7 @@ public class PlayerInteraction : MonoBehaviour
          {
             _interactButton.gameObject.SetActive(true);
             _currentNPC = collision.collider.GetComponent<NPCDialogue>();  
+     
          }
     }
 
@@ -49,7 +50,9 @@ public class PlayerInteraction : MonoBehaviour
          if (collision.collider.CompareTag("NPC"))
         {
             _interactButton.gameObject.SetActive(false);
+            _currentNPC = null;
         }
     }
+    
 
 }

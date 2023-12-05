@@ -78,8 +78,30 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""fc734a2f-5a3c-439b-b3d4-eecd6f28c9c1"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""203368a5-d489-4f65-8da9-365e76f56d9f"",
                     ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b58a6ff5-e3eb-491a-b858-aa47c8aaac4b"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -100,8 +122,30 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""835fcbfa-6f12-4505-a8f8-d686d39f85fe"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""71cfb455-d176-4d6f-a9e1-dd57226689da"",
                     ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c63c0ad9-1e0a-4eb0-9b7a-8d0afd86001c"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

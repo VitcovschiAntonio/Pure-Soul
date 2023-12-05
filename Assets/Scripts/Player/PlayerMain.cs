@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     private PlayerSound _playerSound;
 
     private PlayerInteraction _playerInteraction;
+    private PlayerStats _playerStats;
+    private PlayerCombat _playerCombat;
+
+    private PlayerWeapon _playerWeapon;
     
     void Awake()
     {
@@ -19,6 +23,9 @@ public class Player : MonoBehaviour
        _playerAnimations = GetComponent<PlayerAnimations>();
        _playerSound = GetComponent<PlayerSound>();
        _playerInteraction = GetComponent<PlayerInteraction>();
+       _playerCombat = GetComponent<PlayerCombat>();
+       _playerStats = GetComponent<PlayerStats>();
+       _playerWeapon = GetComponentInChildren<PlayerWeapon>();
     }
     
     void OnEnable()
@@ -27,12 +34,19 @@ public class Player : MonoBehaviour
         _playerInput.OnMoveInput += _playerMovement.OnMovementInput; 
         _playerInput.OnDashInput += _playerMovement.OnDashInput;
         _playerInput.OnInteractInput += _playerInteraction.OnInteractInput;
+        _playerInput.OnAttackInput += _playerCombat.OnAttackInput; 
+        _playerCombat.OnPlayerAttack += _playerMovement.OnPlayerAttack;
+        _playerCombat.OnPlayerStopAttack += _playerMovement.OnPlayerStopAttack;
+        _playerCombat.OnPlayerAttack += _playerWeapon.OnPlayerAttack;
+        
 
 
         //Animations
         _playerMovement.OnPlayerRun += _playerAnimations.OnPlayerMove;
         _playerMovement.OnPlayerStopedMoving += _playerAnimations.OnPlayerStopMoving;
         _playerMovement.OnPlayerDash += _playerAnimations.OnPlayerDash;
+        _playerCombat.OnPlayerAttack += _playerAnimations.OnPlayerAttack;
+        _playerCombat.OnPlayerStopAttack += _playerAnimations.OnPlayerStopAttack;
 
 
         //interaction
@@ -40,15 +54,27 @@ public class Player : MonoBehaviour
     }
     void OnDisable()
     {
-        _playerInput.OnMoveInput -= _playerMovement.OnMovementInput;
+        _playerInput.OnMoveInput -= _playerMovement.OnMovementInput; 
         _playerInput.OnDashInput -= _playerMovement.OnDashInput;
         _playerInput.OnInteractInput -= _playerInteraction.OnInteractInput;
+        _playerInput.OnAttackInput -= _playerCombat.OnAttackInput; 
+        _playerCombat.OnPlayerAttack -= _playerMovement.OnPlayerAttack;
+        _playerCombat.OnPlayerStopAttack -= _playerMovement.OnPlayerStopAttack;
+        _playerCombat.OnPlayerAttack -= _playerWeapon.OnPlayerAttack;
+
+
+        
+
 
 
         //Aniamtions
        _playerMovement.OnPlayerRun -= _playerAnimations.OnPlayerMove;
        _playerMovement.OnPlayerStopedMoving -= _playerAnimations.OnPlayerStopMoving;
         _playerMovement.OnPlayerDash -= _playerAnimations.OnPlayerDash;
+        _playerCombat.OnPlayerAttack -= _playerAnimations.OnPlayerAttack;
+        _playerCombat.OnPlayerStopAttack -= _playerAnimations.OnPlayerStopAttack;
+
+
 
         // Sound
        

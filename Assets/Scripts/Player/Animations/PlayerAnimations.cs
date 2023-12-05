@@ -20,9 +20,10 @@ public class PlayerAnimations : MonoBehaviour
         
     }
 
-    public void OnPlayerMove()
+    public void OnPlayerMove(float speed)
     {
         _animator.SetBool("isRunning",true);
+        _animator.SetFloat("Blend",speed);
     }
     public void OnPlayerStopMoving()
     {
@@ -33,5 +34,18 @@ public class PlayerAnimations : MonoBehaviour
        
         _animator.SetBool("canDash", dashInput);
         
+    }
+    
+    public void PlayerIsIdle()
+    {
+        _animator.SetBool("isIdle", true);
+    }
+    public void OnPlayerAttack(bool attackInput)
+    {
+        _animator.SetBool("canAttack",attackInput);
+    }
+    public void OnPlayerStopAttack()
+    {
+        _animator.SetBool("canAttack", false);
     }
 }

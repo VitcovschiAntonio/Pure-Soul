@@ -26,7 +26,7 @@ public class PlayerInput : MonoBehaviour // means it can be attached on obj
     
     void Awake()
     {
-        Application.targetFrameRate = 60;
+        
 
         _playerInputActions = new PlayerInputActions();
     }
